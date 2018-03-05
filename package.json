@@ -5,10 +5,14 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build --prod",
+    "build": "ng build --prod && npm run build:singlets",
+    "build:dev": "concurrently \"ng build --watch\" \"npm run build:singlets:dev\"",
+    "build:singlets": "tsc ./src/app/content-script.ts --outDir ./dist --lib es2017,dom -t es5",
+    "build:singlets:dev": "tsc ./src/app/content-script.ts --outDir ./dist --lib es2017,dom -t es5 -w",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "compress": "cross-var bestzip dist-zip/$npm_package_name-$npm_package_version.zip dist/*"
   },
   "private": true,
   "dependencies": {
@@ -29,10 +33,14 @@
     "@angular/cli": "~1.7.2",
     "@angular/compiler-cli": "^5.2.0",
     "@angular/language-service": "^5.2.0",
+    "@types/chrome": "0.0.59",
     "@types/jasmine": "~2.8.3",
     "@types/jasminewd2": "~2.0.2",
     "@types/node": "~6.0.60",
+    "bestzip": "^1.1.4",
     "codelyzer": "^4.0.1",
+    "concurrently": "^3.5.1",
+    "cross-var": "^1.1.0",
     "jasmine-core": "~2.8.0",
     "jasmine-spec-reporter": "~4.2.1",
     "karma": "~2.0.0",

@@ -1,0 +1,53 @@
+{
+  "manifest_version": 2,
+  "version": "0.0.0",
+  "name": "chrome-extension-angular-version",
+  "description": "Chrome Extension Angular Version",
+  "author": "Jerry Lin",
+  "icons": {
+    "16": "favicon.ico",
+    "32": "favicon.ico",
+    "48": "favicon.ico",
+    "64": "favicon.ico",
+    "128": "favicon.ico"
+  },
+  "content_security_policy": "default-src 'self'; script-src 'self' 'unsafe-eval'; style-src 'self' 'unsafe-inline'; img-src 'self' 'unsafe-inline' data:",
+  "background": {
+    "page": "index.html#/background",
+    "persistent": false
+  },
+  "options_ui": {
+    "page": "index.html#/options",
+    "chrome_style": true,
+    "open_in_tab": false
+  },
+  "browser_action": {
+    "default_icon": {
+      "19": "favicon.ico",
+      "38": "favicon.ico"
+    },
+    "default_title": "browser action title",
+    "default_popup": "index.html#/popup"
+  },
+  "commands": {
+    "reload_extension" : {
+      "suggested_key" : {
+        "default" : "Ctrl+Shift+Q",
+        "windows" : "Ctrl+Shift+Q",
+        "mac" : "MacCtrl+Shift+Q",
+        "chromeos" : "Ctrl+Shift+Q",
+        "linux" : "Ctrl+Shift+Q"
+      },
+      "description" : "shortcut for reloading extensions"
+    }
+  },
+  "permissions": [
+    "activeTab",
+    "storage",
+    "unlimitedStorage"
+  ],
+  "optional_permissions": [
+    "<all_urls>"
+  ],
+  "web_accessible_resources": []
+}
