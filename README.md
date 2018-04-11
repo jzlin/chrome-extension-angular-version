@@ -37,7 +37,7 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 1. run `npm run build:dev`
 2. Visit `chrome://extensions/` in your Chrome browser.
 3. Ensure that the `Developer mode` checkbox in the top right-hand corner is checked.
-4. Click Load `unpacked extension…` to pop up a file-selection dialog.
+4. Click `Load unpacked` to pop up a file-selection dialog.
 5. Navigate to the directory `dist`, and select it.
 
 ## Build zip
